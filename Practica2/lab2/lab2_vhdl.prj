@@ -1,7 +1,0 @@
-vhdl work "C:\Users\dario\Downloads\DAS\common\common.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\lab2\modcounter.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\common\synchronizer.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\common\edgedetector.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\common\debouncer.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\common\bin2segs.vhd"
-vhdl work "C:\Users\dario\Downloads\DAS\lab2\lab2.vhd"
