@@ -51,14 +51,14 @@ architecture syn of lab2 is
     count : out std_logic_vector(log2(MAXVALUE)-1 downto 0)   -- cuenta
   );
   end component;
-  
-  signal clk, rst_n : std_logic; -- declaramos las señales para "renombrar" la variable osc y rstPb_n
 
+  signal clk , rst_n: std_logic;
+  
   signal startStopSync_n, clearSync_n, lapSync_n : std_logic;
   signal startStopDeb_n,  clearDeb_n,  lapDeb_n  : std_logic;
   signal startStopFall,   clearFall,   lapFall   : std_logic;
   
-  signal lapTFF, startStopTFF : std_logic; -- las señales que van a ir desde la ultima traduciion de los valor a los biestables T
+  signal lapTFF, startStopTFF : std_logic;
   
   signal cycleCntTC, decCntTC, secLowCntTC : std_logic;
     
@@ -72,49 +72,54 @@ architecture syn of lab2 is
 
 begin
 
-
   clk   <= osc;
+  
   rst_n <= rstPb_n;
 
-  startStopSynchronizer : synchronizer
-    generic map ( STAGES => 2, INIT => '1' )
-    port map ( rst_n => rst_n, clk => clk , x => startStop_n, xSync =>startStopSync_n ); --Faltan 2 campos 
+  
 
-  startStopDebouncer : debouncer
-    generic map ( FREQ => 50_000, BOUNCE => 50 )
-    port map ( rst_n => rst_n, clk => clk , x_n => startStopSync_n , xdeb_n => startStopDeb_n ); --Aqui tambien faltan dos campos
-	 
-  startStopEdgeDetector : edgeDetector
-    port map ( rst_n => rst_n, clk => clk , x_n => startStopDeb_n ,xFall => startStopFall ,xRise => open );
-	 
-  --En el clear el numero de STATES = 2 ,pero el INIT es '1' o '0'. Al cargar el clear seguira la misma estructura de starStop
-  -- o ha de ser logica inversa de manera que se ejecute cuando clear 0 y starstop 1
+  ------------------  
 
-  clearSynchronizer : synchronizer  
-    generic map ( STAGES => 2, INIT => '1')--¿El valor de inir es correcto?
-    port map ( rst_n => rst_n, clk => clk , x => clear_n, xSync => clearSync_n );
+  
+	startStopSynchronizer : synchronizer
+	 generic map ( STAGES => 2, INIT => '1' )
+	 port map ( rst_n => rst_n, clk => clk , x => startStop_n, xSync =>startStopSync_n ); --Faltan 2 campos 
 
-  clearDebouncer : debouncer
-    generic map ( FREQ => 50_000, BOUNCE => 50 )
-    port map ( rst_n => rst_n, clk => clk , x_n => clearSync_n , xdeb_n => clearDeb_n );
+	startStopDebouncer : debouncer
+	 generic map ( FREQ => 50_000, BOUNCE => 50 )
+	 port map ( rst_n => rst_n, clk => clk , x_n => startStopSync_n , xdeb_n => startStopDeb_n ); --Aqui tambien faltan dos campos
 	 
-  clearEdgeDetector : edgeDetector
-    port map ( rst_n => rst_n, clk => clk , x_n => clearDeb_n ,xFall => clearFall ,xRise => open );
+	startStopEdgeDetector : edgeDetector
+	 port map ( rst_n => rst_n, clk => clk , x_n => startStopDeb_n ,xFall => startStopFall ,xRise => open );
 	 
-	
-  lapSynchronizer : synchronizer
-    generic map (STAGES => 2, INIT => '1' ) --¿ el valor de init es correcto?
-    port map ( rst_n => rst_n, clk => clk , x => lap_n , xSync =>lapSync_n );
+	--En el clear el numero de STATES = 2 ,pero el INIT es '1' o '0'. Al cargar el clear seguira la misma estructura de starStop
+	-- o ha de ser logica inversa de manera que se ejecute cuando clear 0 y starstop 1
 
-  lapDebouncer : debouncer
-    generic map ( FREQ => 50_000, BOUNCE => 50 )
-    port map (  rst_n => rst_n, clk => clk , x_n => lapSync_n , xdeb_n => lapDeb_n );
+	clearSynchronizer : synchronizer  
+	 generic map ( STAGES => 2, INIT => '1')--¿El valor de inir es correcto?
+	 port map ( rst_n => rst_n, clk => clk , x => clear_n, xSync => clearSync_n );
+
+	clearDebouncer : debouncer
+	 generic map ( FREQ => 50_000, BOUNCE => 50 )
+	 port map ( rst_n => rst_n, clk => clk , x_n => clearSync_n , xdeb_n => clearDeb_n );
 	 
-  lapEdgeDetector : edgeDetector
-    port map ( rst_n => rst_n, clk => clk , x_n => lapDeb_n ,xFall => lapFall ,xRise => open );
+	clearEdgeDetector : edgeDetector
+	 port map ( rst_n => rst_n, clk => clk , x_n => clearDeb_n ,xFall => clearFall ,xRise => open );
+	 
+
+	lapSynchronizer : synchronizer
+	 generic map (STAGES => 2, INIT => '1' ) --¿ el valor de init es correcto?
+	 port map ( rst_n => rst_n, clk => clk , x => lap_n , xSync =>lapSync_n );
+
+	lapDebouncer : debouncer
+	 generic map ( FREQ => 50_000, BOUNCE => 50 )
+	 port map (  rst_n => rst_n, clk => clk , x_n => lapSync_n , xdeb_n => lapDeb_n );
+	 
+	lapEdgeDetector : edgeDetector
+	 port map ( rst_n => rst_n, clk => clk , x_n => lapDeb_n ,xFall => lapFall ,xRise => open );
   
   ------------------  
-  
+
 
   toggleFF :
   process (rst_n, clk)
@@ -122,59 +127,60 @@ begin
     if rst_n='0' then
       startStopTFF <= '0';
       lapTFF       <= '0';
-    elsif rising_edge(clk) then
-      if startStopFall = '1' then  -- si tras filtrar la señal llega un 1 entonces propago ese uno de start
-        startStopTFF <= '1';  -- como distingo si envio un star de un stop
+	elsif rising_edge(clk) then
+      if startStopFall = '1' then
+        startStopTFF <=  not(startStopTFF);
       end if;
-      if lapFall = '1' then
-        lapTFF <= '1';  -- mirar el valor a trasmitir
+      if lapFall ='1' then
+        lapTFF <= not(lapTFF);
       end if;
     end if;
   end process;
-	
-  cycleCounter : modCounter 
+ 
+
+ cycleCounter : modCounter 
     generic map ( MAXVALUE => 5_000_000-1 )
-    port map ( ... );
+    port map ( rst_n => rst_n, clk => clk, clear => clearFall, ce => startStopTFF, tc => cycleCntTC, count  => open  );
   
   decCounter : modCounter 
     generic map ( MAXVALUE => 9 )
-    port map ( ... );
+    port map ( rst_n => rst_n, clk => clk, clear => clearFall, ce => cycleCntTC, tc => decCntTC , count  => decCnt );
     
   secLowCounter : modCounter 
     generic map ( MAXVALUE => 9 )
-    port map ( ... );
+    port map (  rst_n => rst_n, clk => clk, clear => clearFall, ce => decCntTC, tc => secLowCntTC , count  => secLowCnt  );
 	
   secHighCounter : modCounter 
-    generic map ( MAXVALUE => 6 )
-    port map ( ... );
+    generic map ( MAXVALUE => 5 )
+    port map ( rst_n => rst_n, clk => clk, clear => clearFall, ce => secLowCntTC, tc => open , count  => secHighCnt );
   
   lapRegister :
   process (rst_n, clk)
   begin
     if rst_n='0' then
-      secLowReg  <= ...;
-      secHighReg <= ...;
+      secLowReg  <= (others => '0');
+      secHighReg <= (others => '0');
     elsif rising_edge(clk) then
-      if ... then
-        secLowReg  <= ...;
-        secHighReg <= ...;       
-      elsif ... then
-        secLowReg <= ...;
-        secHighReg <= ...;        
+      if clearFall = '1' then
+        secLowReg  <= (others => '0');
+        secHighReg <= (others => '0');       
+      elsif lapFall = '1' then
+        secLowReg <= secLowCnt;
+        secHighReg <= secHighCnt;        
       end if;
     end if;
   end process;
 
   leftConverterMux :
-    secHighMux <= ... when ... else ...;
+    secHighMux <= '0' & secHighCnt when lapTFF = '0' else '0' & secHighReg;
   
   rigthConverterMux :
-    secLowMux <= ... when ... else ...;
+    secLowMux <= secLowCnt when lapTFF = '0' else secLowReg;
   
   leftConverter : bin2segs 
-    port map ( ... );
+    port map ( bin => secHighMux, dp => decCnt(3), segs =>leftSegs) ;
   
   rigthConverter : bin2segs 
-    port map ( ... );
+    port map ( bin => secLowMux, dp => decCnt(3), segs =>rightSegs );
   
 end syn;

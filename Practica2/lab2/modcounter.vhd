@@ -52,9 +52,9 @@ begin
     if rst_n='0' then
       cs <= (others => '0');
     elsif rising_edge(clk) then
-      if clear = '0' then
+      if clear = '1' then
         cs <= (others => '0');
-      elsif clear = '1' and ce = '1' then
+      elsif clear = '0' and ce = '1' then
         if cs = MAXVALUE then
           cs <= (others => '0');
         else 
