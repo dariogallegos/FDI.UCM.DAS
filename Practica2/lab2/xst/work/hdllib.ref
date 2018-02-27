@@ -1,0 +1,13 @@
+EN modcounter NULL C:/Users/dario/Downloads/DAS/lab2/modcounter.vhd sub00/vhpl08 1519599843
+EN edgedetector NULL C:/Users/dario/Downloads/DAS/common/edgedetector.vhd sub00/vhpl06 1519599841
+PB common common C:/Users/dario/Downloads/DAS/common/common.vhd sub00/vhpl01 1519599836
+EN bin2segs NULL C:/Users/dario/Downloads/DAS/common/bin2segs.vhd sub00/vhpl10 1519599845
+AR debouncer syn C:/Users/dario/Downloads/DAS/common/debouncer.vhd sub00/vhpl05 1519599840
+EN lab2 NULL C:/Users/dario/Downloads/DAS/lab2/lab2.vhd sub00/vhpl12 1519599847
+AR bin2segs syn C:/Users/dario/Downloads/DAS/common/bin2segs.vhd sub00/vhpl11 1519599846
+AR synchronizer syn C:/Users/dario/Downloads/DAS/common/synchronizer.vhd sub00/vhpl03 1519599838
+AR modcounter syn C:/Users/dario/Downloads/DAS/lab2/modcounter.vhd sub00/vhpl09 1519599844
+PH common NULL C:/Users/dario/Downloads/DAS/common/common.vhd sub00/vhpl00 1519599835
+EN synchronizer NULL C:/Users/dario/Downloads/DAS/common/synchronizer.vhd sub00/vhpl02 1519599837
+EN debouncer NULL C:/Users/dario/Downloads/DAS/common/debouncer.vhd sub00/vhpl04 1519599839
+AR edgedetector syn C:/Users/dario/Downloads/DAS/common/edgedetector.vhd sub00/vhpl07 1519599842

@@ -1,3 +1,0 @@
-vhdl work "../common/common.vhd"
-vhdl work "../common/bin2segs.vhd"
-vhdl work "lab1.vhd"
