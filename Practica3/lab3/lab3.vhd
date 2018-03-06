@@ -168,6 +168,6 @@ begin
   rigthConverter : bin2segs 
   port map( bin => tries , dp => '0', segs => upSegs);
   
-  leds <= ("0000000" & lock); -- si no meter 7 ceros antes del lock "0000000"
+  leds <= (others=>lock); -- si no meter 7 ceros antes del lock "0000000"
 
 end syn;
