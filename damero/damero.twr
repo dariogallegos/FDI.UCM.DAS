@@ -1,0 +1,508 @@
+--------------------------------------------------------------------------------
+Release 14.1 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe
+-intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o
+damero.twr damero.pcf -ucf damero.ucf
+
+Design file:              damero.ncd
+Physical constraint file: damero.pcf
+Device,package,speed:     xc3s1000,ft256,-5 (PRODUCTION 1.39 2012-04-23)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: TSclk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 456 paths analyzed, 73 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.084ns.
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/lineCnt_9 (SLICE_X25Y55.CE), 11 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.916ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_1 (FF)
+  Destination:          screenInteface/lineCnt_9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.036ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.048ns (0.337 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_1 to screenInteface/lineCnt_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y50.XQ      Tcko                  0.626   screenInteface/pixelCnt<1>
+                                                       screenInteface/pixelCnt_1
+    SLICE_X20Y50.F1      net (fanout=2)        0.543   screenInteface/pixelCnt<1>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_9
+    -------------------------------------------------  ---------------------------
+    Total                                      5.036ns (2.737ns logic, 2.299ns route)
+                                                       (54.3% logic, 45.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.934ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_4 (FF)
+  Destination:          screenInteface/lineCnt_9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.039ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.027ns (0.337 - 0.364)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_4 to screenInteface/lineCnt_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y52.YQ      Tcko                  0.626   screenInteface/pixelCnt<5>
+                                                       screenInteface/pixelCnt_4
+    SLICE_X23Y55.F1      net (fanout=4)        0.565   screenInteface/pixelCnt<4>
+    SLICE_X23Y55.X       Tilo                  0.479   screenInteface/pixelCnt_cmp_eq000022
+                                                       screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.G2      net (fanout=1)        0.536   screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_9
+    -------------------------------------------------  ---------------------------
+    Total                                      5.039ns (2.687ns logic, 2.352ns route)
+                                                       (53.3% logic, 46.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.953ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_2 (FF)
+  Destination:          screenInteface/lineCnt_9 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.999ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.048ns (0.337 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_2 to screenInteface/lineCnt_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y51.YQ      Tcko                  0.626   screenInteface/pixelCnt<3>
+                                                       screenInteface/pixelCnt_2
+    SLICE_X20Y50.F2      net (fanout=2)        0.506   screenInteface/pixelCnt<2>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_9
+    -------------------------------------------------  ---------------------------
+    Total                                      4.999ns (2.737ns logic, 2.262ns route)
+                                                       (54.8% logic, 45.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/lineCnt_8 (SLICE_X25Y55.CE), 11 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.916ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_1 (FF)
+  Destination:          screenInteface/lineCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.036ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.048ns (0.337 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_1 to screenInteface/lineCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y50.XQ      Tcko                  0.626   screenInteface/pixelCnt<1>
+                                                       screenInteface/pixelCnt_1
+    SLICE_X20Y50.F1      net (fanout=2)        0.543   screenInteface/pixelCnt<1>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      5.036ns (2.737ns logic, 2.299ns route)
+                                                       (54.3% logic, 45.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.934ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_4 (FF)
+  Destination:          screenInteface/lineCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.039ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.027ns (0.337 - 0.364)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_4 to screenInteface/lineCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y52.YQ      Tcko                  0.626   screenInteface/pixelCnt<5>
+                                                       screenInteface/pixelCnt_4
+    SLICE_X23Y55.F1      net (fanout=4)        0.565   screenInteface/pixelCnt<4>
+    SLICE_X23Y55.X       Tilo                  0.479   screenInteface/pixelCnt_cmp_eq000022
+                                                       screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.G2      net (fanout=1)        0.536   screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      5.039ns (2.687ns logic, 2.352ns route)
+                                                       (53.3% logic, 46.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.953ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_2 (FF)
+  Destination:          screenInteface/lineCnt_8 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.999ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.048ns (0.337 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_2 to screenInteface/lineCnt_8
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y51.YQ      Tcko                  0.626   screenInteface/pixelCnt<3>
+                                                       screenInteface/pixelCnt_2
+    SLICE_X20Y50.F2      net (fanout=2)        0.506   screenInteface/pixelCnt<2>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X25Y55.CE      net (fanout=6)        1.227   screenInteface/pixelCntTC
+    SLICE_X25Y55.CLK     Tceck                 0.524   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_8
+    -------------------------------------------------  ---------------------------
+    Total                                      4.999ns (2.737ns logic, 2.262ns route)
+                                                       (54.8% logic, 45.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/lineCnt_1 (SLICE_X26Y50.CE), 11 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.925ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_1 (FF)
+  Destination:          screenInteface/lineCnt_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.062ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.372 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_1 to screenInteface/lineCnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y50.XQ      Tcko                  0.626   screenInteface/pixelCnt<1>
+                                                       screenInteface/pixelCnt_1
+    SLICE_X20Y50.F1      net (fanout=2)        0.543   screenInteface/pixelCnt<1>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X26Y50.CE      net (fanout=6)        1.253   screenInteface/pixelCntTC
+    SLICE_X26Y50.CLK     Tceck                 0.524   screenInteface/lineCnt<1>
+                                                       screenInteface/lineCnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.062ns (2.737ns logic, 2.325ns route)
+                                                       (54.1% logic, 45.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.935ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_4 (FF)
+  Destination:          screenInteface/lineCnt_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.065ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_4 to screenInteface/lineCnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y52.YQ      Tcko                  0.626   screenInteface/pixelCnt<5>
+                                                       screenInteface/pixelCnt_4
+    SLICE_X23Y55.F1      net (fanout=4)        0.565   screenInteface/pixelCnt<4>
+    SLICE_X23Y55.X       Tilo                  0.479   screenInteface/pixelCnt_cmp_eq000022
+                                                       screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.G2      net (fanout=1)        0.536   screenInteface/pixelCnt_cmp_eq000022
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X26Y50.CE      net (fanout=6)        1.253   screenInteface/pixelCntTC
+    SLICE_X26Y50.CLK     Tceck                 0.524   screenInteface/lineCnt<1>
+                                                       screenInteface/lineCnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.065ns (2.687ns logic, 2.378ns route)
+                                                       (53.1% logic, 46.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.962ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               screenInteface/pixelCnt_2 (FF)
+  Destination:          screenInteface/lineCnt_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.025ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.013ns (0.372 - 0.385)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: screenInteface/pixelCnt_2 to screenInteface/lineCnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y51.YQ      Tcko                  0.626   screenInteface/pixelCnt<3>
+                                                       screenInteface/pixelCnt_2
+    SLICE_X20Y50.F2      net (fanout=2)        0.506   screenInteface/pixelCnt<2>
+    SLICE_X20Y50.X       Tilo                  0.529   screenInteface/pixelCnt_cmp_eq00005
+                                                       screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.G1      net (fanout=1)        0.505   screenInteface/pixelCnt_cmp_eq00005
+    SLICE_X20Y54.Y       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCnt_cmp_eq000024
+    SLICE_X20Y54.F4      net (fanout=11)       0.024   screenInteface/pixelCnt_cmp_eq0000
+    SLICE_X20Y54.X       Tilo                  0.529   screenInteface/pixelCntTC
+                                                       screenInteface/pixelCntTC_and00001
+    SLICE_X26Y50.CE      net (fanout=6)        1.253   screenInteface/pixelCntTC
+    SLICE_X26Y50.CLK     Tceck                 0.524   screenInteface/lineCnt<1>
+                                                       screenInteface/lineCnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      5.025ns (2.737ns logic, 2.288ns route)
+                                                       (54.5% logic, 45.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TSclk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/cycleCnt_0_0 (SLICE_X21Y54.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.829ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               screenInteface/cycleCnt_0_0 (FF)
+  Destination:          screenInteface/cycleCnt_0_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.829ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: screenInteface/cycleCnt_0_0 to screenInteface/cycleCnt_0_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y54.YQ      Tcko                  0.501   screenInteface/cycleCnt_0_0
+                                                       screenInteface/cycleCnt_0_0
+    SLICE_X21Y54.BY      net (fanout=7)        0.533   screenInteface/cycleCnt_0_0
+    SLICE_X21Y54.CLK     Tckdi       (-Th)     0.205   screenInteface/cycleCnt_0_0
+                                                       screenInteface/cycleCnt_0_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.829ns (0.296ns logic, 0.533ns route)
+                                                       (35.7% logic, 64.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/vSync (SLICE_X25Y53.F3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.836ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               screenInteface/lineCnt_9 (FF)
+  Destination:          screenInteface/vSync (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.865ns (Levels of Logic = 1)
+  Clock Path Skew:      0.029ns (0.217 - 0.188)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: screenInteface/lineCnt_9 to screenInteface/vSync
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y55.XQ      Tcko                  0.501   screenInteface/lineCnt<9>
+                                                       screenInteface/lineCnt_9
+    SLICE_X25Y53.F3      net (fanout=4)        0.311   screenInteface/lineCnt<9>
+    SLICE_X25Y53.CLK     Tckf        (-Th)    -0.053   screenInteface/vSync
+                                                       screenInteface/vSyncInt30
+                                                       screenInteface/vSync
+    -------------------------------------------------  ---------------------------
+    Total                                      0.865ns (0.554ns logic, 0.311ns route)
+                                                       (64.0% logic, 36.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point screenInteface/hSync (SLICE_X22Y55.F4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.836ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               screenInteface/pixelCnt_9 (FF)
+  Destination:          screenInteface/hSync (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.871ns (Levels of Logic = 1)
+  Clock Path Skew:      0.035ns (0.333 - 0.298)
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: screenInteface/pixelCnt_9 to screenInteface/hSync
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y55.XQ      Tcko                  0.501   screenInteface/pixelCnt<9>
+                                                       screenInteface/pixelCnt_9
+    SLICE_X22Y55.F4      net (fanout=4)        0.277   screenInteface/pixelCnt<9>
+    SLICE_X22Y55.CLK     Tckf        (-Th)    -0.093   screenInteface/hSync
+                                                       screenInteface/hSyncInt
+                                                       screenInteface/hSync
+    -------------------------------------------------  ---------------------------
+    Total                                      0.871ns (0.594ns logic, 0.277ns route)
+                                                       (68.2% logic, 31.8% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TSclk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.751ns (Trpw)
+  Physical resource: screenInteface/lineCnt<7>/SR
+  Logical resource: screenInteface/lineCnt_7/SR
+  Location pin: SLICE_X24Y55.SR
+  Clock network: rst_n_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.751ns (Trpw)
+  Physical resource: screenInteface/lineCnt<7>/SR
+  Logical resource: screenInteface/lineCnt_7/SR
+  Location pin: SLICE_X24Y55.SR
+  Clock network: rst_n_IBUF
+--------------------------------------------------------------------------------
+Slack: 18.498ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.751ns (Trpw)
+  Physical resource: screenInteface/pixelCnt<1>/SR
+  Logical resource: screenInteface/pixelCnt_1/SR
+  Location pin: SLICE_X23Y50.SR
+  Clock network: rst_n_IBUF
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.084|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 456 paths, 0 nets, and 152 connections
+
+Design statistics:
+   Minimum period:   5.084ns{1}   (Maximum frequency: 196.696MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Mon Apr 23 14:37:28 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 171 MB
+
+
+

@@ -1,0 +1,39 @@
+V3 28
+FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd 2018/03/19.13:36:02 P.20131013
+PH work/common 1523263659 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 CD bin2segs \
+      CD debouncer CD edgeDetector CD synchronizer CD frequencySynthesizer \
+      CD ps2Receiver CD fifo CD rs232Receiver CD rs232Transmitter
+PB work/common 1523263660 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd \
+      PH work/common 1523263659
+FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd 2018/02/23.13:15:40 P.20131013
+EN work/edgeDetector 1523263657 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/edgeDetector/syn 1523263658 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd \
+      EN work/edgeDetector 1523263657
+FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd 2018/04/09.00:12:25 P.20131013
+EN work/ps2Receiver 1523263661 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/ps2Receiver/syn 1523263662 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd \
+      EN work/ps2Receiver 1523263661 CP synchronizer CP edgeDetector CP parityOK \
+      CP lastBit PB work/common 1523263660
+FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd 2018/02/23.13:15:24 P.20131013
+EN work/synchronizer 1523263655 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/synchronizer/syn 1523263656 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd \
+      EN work/synchronizer 1523263655
+FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/vgaInterface.vhd 2018/04/08.23:50:30 P.20131013
+EN work/vgaInterface 0 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/vgaInterface.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/vgaInterface/syn 0 \
+      FL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/vgaInterface.vhd \
+      EN work/vgaInterface 0 PB ieee/NUMERIC_STD 1381692181

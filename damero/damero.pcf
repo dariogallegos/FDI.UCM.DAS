@@ -1,0 +1,35 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Mon Apr 23 14:37:20 2018
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "hSync" LOCATE = SITE "B7" LEVEL 1;
+COMP "clk" LOCATE = SITE "P8" LEVEL 1;
+COMP "vSync" LOCATE = SITE "D8" LEVEL 1;
+COMP "RGB<0>" LOCATE = SITE "C9" LEVEL 1;
+COMP "RGB<1>" LOCATE = SITE "E7" LEVEL 1;
+COMP "RGB<2>" LOCATE = SITE "D5" LEVEL 1;
+COMP "RGB<3>" LOCATE = SITE "A8" LEVEL 1;
+COMP "RGB<4>" LOCATE = SITE "A5" LEVEL 1;
+COMP "RGB<5>" LOCATE = SITE "C3" LEVEL 1;
+COMP "RGB<6>" LOCATE = SITE "C8" LEVEL 1;
+COMP "RGB<7>" LOCATE = SITE "D6" LEVEL 1;
+COMP "RGB<8>" LOCATE = SITE "B1" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "H4" LEVEL 1;
+NET "clk_BUFGP/IBUFG" BEL "clk_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+TIMEGRP clk = BEL "screenInteface/pixelCnt_9" BEL "screenInteface/pixelCnt_8"
+        BEL "screenInteface/pixelCnt_7" BEL "screenInteface/pixelCnt_6" BEL
+        "screenInteface/pixelCnt_5" BEL "screenInteface/pixelCnt_4" BEL
+        "screenInteface/pixelCnt_3" BEL "screenInteface/pixelCnt_2" BEL
+        "screenInteface/pixelCnt_1" BEL "screenInteface/pixelCnt_0" BEL
+        "screenInteface/lineCnt_9" BEL "screenInteface/lineCnt_8" BEL
+        "screenInteface/lineCnt_7" BEL "screenInteface/lineCnt_6" BEL
+        "screenInteface/lineCnt_5" BEL "screenInteface/lineCnt_4" BEL
+        "screenInteface/lineCnt_3" BEL "screenInteface/lineCnt_2" BEL
+        "screenInteface/lineCnt_1" BEL "screenInteface/lineCnt_0" BEL
+        "screenInteface/cycleCnt_0_0" BEL "screenInteface/RGB_0" BEL
+        "screenInteface/vSync" BEL "screenInteface/hSync" BEL
+        "clk_BUFGP/BUFG.GCLKMUX" BEL "clk_BUFGP/BUFG";
+TSclk = PERIOD TIMEGRP "clk" 20 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,9 @@
+EN edgedetector NULL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd sub00/vhpl03 1523263657
+PB common common B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd sub00/vhpl07 1523263660
+AR ps2receiver syn B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd sub00/vhpl08 1523263662
+AR synchronizer syn B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd sub00/vhpl02 1523263656
+EN ps2receiver NULL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd sub00/vhpl05 1523263661
+PH common NULL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd sub00/vhpl06 1523263659
+EN synchronizer NULL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd sub00/vhpl01 1523263655
+EN vgainterface NULL B:/Programas/Github/UCM.FDI.DAS/Practica6/common/vgaInterface.vhd sub00/vhpl00 1523263719
+AR edgedetector syn B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd sub00/vhpl04 1523263658

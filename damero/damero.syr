@@ -1,0 +1,400 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> Reading design: damero.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "damero.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "damero"
+Output Format                      : NGC
+Target Device                      : xc3s1000-5-ft256
+
+---- Source Options
+Top Module Name                    : damero
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/DAS/common/common.vhd" in Library work.
+Architecture common of Entity common is up to date.
+Compiling vhdl file "C:/hlocal/DAS/common/vgaInterface.vhd" in Library work.
+Entity <vgainterface> compiled.
+Entity <vgainterface> (Architecture <syn>) compiled.
+Compiling vhdl file "C:/hlocal/DAS/damero/damero.vhd" in Library work.
+Architecture syn of Entity damero is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <damero> in library <work> (architecture <syn>).
+
+Analyzing hierarchy for entity <vgaInterface> in library <work> (architecture <syn>) with generics.
+	FREQ = 50000
+	SYNCDELAY = 0
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <damero> in library <work> (Architecture <syn>).
+Entity <damero> analyzed. Unit <damero> generated.
+
+Analyzing generic Entity <vgaInterface> in library <work> (Architecture <syn>).
+	FREQ = 50000
+	SYNCDELAY = 0
+WARNING:Xst:819 - "C:/hlocal/DAS/common/vgaInterface.vhd" line 96: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <pixelCnt>, <cycleCntTC>
+Entity <vgaInterface> analyzed. Unit <vgaInterface> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <vgaInterface>.
+    Related source file is "C:/hlocal/DAS/common/vgaInterface.vhd".
+    Found 1-bit register for signal <vSync>.
+    Found 9-bit register for signal <RGB>.
+    Found 1-bit register for signal <hSync>.
+    Found 10-bit comparator greatequal for signal <blanking$cmp_ge0000> created at line 142.
+    Found 10-bit comparator greatequal for signal <blanking$cmp_ge0001> created at line 142.
+    Found T flip-flop for signal <cycleCnt<0>>.
+    Found 10-bit comparator greatequal for signal <hSyncInt$cmp_ge0000> created at line 139.
+    Found 10-bit comparator less for signal <hSyncInt$cmp_lt0000> created at line 139.
+    Found 10-bit up counter for signal <lineCnt>.
+    Found 10-bit up counter for signal <pixelCnt>.
+    Found 10-bit comparator greatequal for signal <vSyncInt$cmp_ge0000> created at line 140.
+    Found 10-bit comparator less for signal <vSyncInt$cmp_lt0000> created at line 140.
+    Summary:
+	inferred   2 Counter(s).
+	inferred   1 T-type flip-flop(s).
+	inferred  11 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <vgaInterface> synthesized.
+
+
+Synthesizing Unit <damero>.
+    Related source file is "C:/hlocal/DAS/damero/damero.vhd".
+WARNING:Xst:646 - Signal <pixel<9:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pixel<3:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <line<9:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <line<3:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit xor2 for signal <color$xor0000> created at line 52.
+Unit <damero> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 3
+ 1-bit register                                        : 2
+ 9-bit register                                        : 1
+# Toggle Registers                                     : 1
+ T flip-flop                                           : 1
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 2
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 10-bit up counter                                     : 2
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 4
+ 10-bit comparator less                                : 2
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <RGB_0> in Unit <vgaInterface> is equivalent to the following 8 FFs/Latches, which will be removed : <RGB_1> <RGB_2> <RGB_3> <RGB_4> <RGB_5> <RGB_6> <RGB_7> <RGB_8> 
+
+Optimizing unit <damero> ...
+
+Optimizing unit <vgaInterface> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block damero, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 24
+ Flip-Flops                                            : 24
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : damero.ngr
+Top Level Output File Name         : damero
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 97
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 18
+#      LUT2                        : 21
+#      LUT3                        : 2
+#      LUT4                        : 10
+#      LUT4_D                      : 2
+#      MUXCY                       : 18
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 24
+#      FDC                         : 4
+#      FDCE                        : 20
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 1
+#      OBUF                        : 11
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                       29  out of   7680     0%  
+ Number of Slice Flip Flops:             24  out of  15360     0%  
+ Number of 4 input LUTs:                 57  out of  15360     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    173     7%  
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 24    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------------------------------+---------------------------+-------+
+Control Signal                                                                 | Buffer(FF name)           | Load  |
+-------------------------------------------------------------------------------+---------------------------+-------+
+screenInteface/cycleCnt_0_Aclr_inv(screenInteface/cycleCnt_0_Aclr_inv1_INV_0:O)| NONE(screenInteface/RGB_0)| 24    |
+-------------------------------------------------------------------------------+---------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 5.601ns (Maximum Frequency: 178.533MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 6.490ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 5.601ns (frequency: 178.533MHz)
+  Total number of paths / destination ports: 456 / 44
+-------------------------------------------------------------------------
+Delay:               5.601ns (Levels of Logic = 3)
+  Source:            screenInteface/pixelCnt_3 (FF)
+  Destination:       screenInteface/lineCnt_9 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: screenInteface/pixelCnt_3 to screenInteface/lineCnt_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.626   1.040  screenInteface/pixelCnt_3 (screenInteface/pixelCnt_3)
+     LUT4:I0->O            1   0.479   0.740  screenInteface/pixelCnt_cmp_eq00005 (screenInteface/pixelCnt_cmp_eq00005)
+     LUT4_D:I2->LO         1   0.479   0.270  screenInteface/pixelCnt_cmp_eq000024 (N4)
+     LUT2:I1->O           10   0.479   0.964  screenInteface/pixelCntTC_and00001 (screenInteface/pixelCntTC)
+     FDCE:CE                   0.524          screenInteface/lineCnt_0
+    ----------------------------------------
+    Total                      5.601ns (2.587ns logic, 3.014ns route)
+                                       (46.2% logic, 53.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 11 / 11
+-------------------------------------------------------------------------
+Offset:              6.490ns (Levels of Logic = 1)
+  Source:            screenInteface/RGB_0 (FF)
+  Destination:       RGB<8> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: screenInteface/RGB_0 to RGB<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.626   0.955  screenInteface/RGB_0 (screenInteface/RGB_0)
+     OBUF:I->O                 4.909          RGB_8_OBUF (RGB<8>)
+    ----------------------------------------
+    Total                      6.490ns (5.535ns logic, 0.955ns route)
+                                       (85.3% logic, 14.7% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.12 secs
+ 
+--> 
+
+Total memory usage is 257212 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

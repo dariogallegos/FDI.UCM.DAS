@@ -1,0 +1,36 @@
+V3 34
+FL C:/hlocal/DAS/common/common.vhd 2018/04/09.15:29:04 P.15xf
+PH work/common 1524588240 FL C:/hlocal/DAS/common/common.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/NUMERIC_STD 1335251627 CD bin2segs \
+      CD debouncer CD edgeDetector CD synchronizer CD frequencySynthesizer \
+      CD ps2Receiver CD fifo CD rs232Receiver CD rs232Transmitter CD vgaInterface
+PB work/common 1524588241 \
+      FL C:/hlocal/DAS/common/common.vhd PH work/common 1524588240
+FL C:/hlocal/DAS/common/edgedetector.vhd 2018/02/23.12:15:40 P.15xf
+EN work/edgeDetector 1524588244 FL C:/hlocal/DAS/common/edgedetector.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/edgeDetector/syn 1524588245 \
+      FL C:/hlocal/DAS/common/edgedetector.vhd EN work/edgeDetector 1524588244
+FL C:/hlocal/DAS/common/ps2receiver.vhd 2018/03/13.14:59:06 P.15xf
+EN work/ps2Receiver 1524588246 FL C:/hlocal/DAS/common/ps2receiver.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/ps2Receiver/syn 1524588247 \
+      FL C:/hlocal/DAS/common/ps2receiver.vhd EN work/ps2Receiver 1524588246 \
+      PB work/common 1524588241 CP synchronizer CP edgeDetector CP parityOK \
+      CP lastBit
+FL C:/hlocal/DAS/common/synchronizer.vhd 2018/02/23.12:15:24 P.15xf
+EN work/synchronizer 1524588242 FL C:/hlocal/DAS/common/synchronizer.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/synchronizer/syn 1524588243 \
+      FL C:/hlocal/DAS/common/synchronizer.vhd EN work/synchronizer 1524588242
+FL C:/hlocal/DAS/common/vgaInterface.vhd 2018/04/23.14:36:56 P.15xf
+EN work/vgaInterface 1524588248 FL C:/hlocal/DAS/common/vgaInterface.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/vgaInterface/syn 1524588249 \
+      FL C:/hlocal/DAS/common/vgaInterface.vhd EN work/vgaInterface 1524588248 \
+      PB ieee/NUMERIC_STD 1335251627
+FL C:/hlocal/DAS/lab6/lab6.vhd 2018/04/24.18:43:57 P.15xf
+EN work/lab6 1524588250 FL C:/hlocal/DAS/lab6/lab6.vhd PB ieee/std_logic_1164 1335251622
+AR work/lab6/syn 1524588251 \
+      FL C:/hlocal/DAS/lab6/lab6.vhd EN work/lab6 1524588250 PB ieee/NUMERIC_STD 1335251627 \
+      PB work/common 1524588241 CP synchronizer CP ps2Receiver CP vgaInterface

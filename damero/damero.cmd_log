@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+xst -intstyle ise -ifn "D:/DAS/damero/damero.xst" -ofn "D:/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 
+xst -intstyle ise -ifn "C:/hlocal/DAS/damero/damero.xst" -ofn "C:/hlocal/DAS/damero/damero.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc damero.ucf -p xc3s1000-ft256-5 damero.ngc damero.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o damero_map.ncd damero.ngd damero.pcf 
+par -w -intstyle ise -ol high -t 1 damero_map.ncd damero.ncd damero.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml damero.twx damero.ncd -o damero.twr damero.pcf -ucf damero.ucf 
+bitgen -intstyle ise -f damero.ut damero.ncd 

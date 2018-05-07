@@ -1,0 +1,5 @@
+set -tmpdir "B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/xst/projnav.tmp"
+set -xsthdpdir "B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/xst"
+elaborate
+-ifn vgaInterface.prj
+-ifmt mixed

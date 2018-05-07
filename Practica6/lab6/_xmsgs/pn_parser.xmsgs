@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/common/common.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/common/edgedetector.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/common/ps2receiver.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/common/synchronizer.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/common/vgaInterface.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">77</arg>. <arg fmt="%s" index="3">Syntax error near &quot;if&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">131</arg>. <arg fmt="%s" index="3">Syntax error near &quot;.&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">139</arg>. <arg fmt="%s" index="3">Syntax error near &quot;.&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">145</arg>. <arg fmt="%s" index="3">Syntax error near &quot;.&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">155</arg>. <arg fmt="%s" index="3">Syntax error near &quot;.&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">B:/Programas/Github/UCM.FDI.DAS/Practica6/lab6/lab6.vhd</arg>&quot; Line <arg fmt="%d" index="2">163</arg>. <arg fmt="%s" index="3">Syntax error near &quot;.&quot;.</arg>
+</msg>
+
+</messages>
+
